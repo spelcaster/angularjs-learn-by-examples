@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS - Learn by example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="notify.module.js"></script>
+</head>
+<body>
+    <div id="simple" ng-app="serviceModule" ng-controller="ServiceController as main">
+        <p>Let's try this simple notify service, injected into the controller</p>
+        <input type="" ng-init="main.message='test'" ng-model="main.message">
+        <button ng-click="main.callNotify(main.message)">NOTIFY</button>
+        <p>(you have to click 3 times to see an alert)</p>
+    </div>
+</body>
+</html>
