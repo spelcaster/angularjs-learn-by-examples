@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS - Controller As</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="controller.module.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="IndexController as main">
+        <h1>Controller</h1>
+        <p>{{ main.message }}</p>
+        <p>{{ main.sum(1, 2) }}</p>
+    </div>
+</body>
+</html>
