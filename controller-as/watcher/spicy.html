@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS - Watcher</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="spicy.module.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="IndexController as main">
+        <button ng-click="main.chiliSpicy()">Chili</button><br />
+        <button ng-click="main.jalapenoSpicy()">Jalapeño</button><br />
+        <input type="text" ng-model="main.customSpice" >
+        <button ng-click="main.customSpicy()">Custom</button><br />
+        <p>The food is {{ main.spice }} spicy</p>
+    </div>
+</body>
+</html>
