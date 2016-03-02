@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJs - Controller (Inheritance)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="inheritance.module.js"></script>
+    <style>
+        div.spicy div {
+            padding: 10px;
+            border: solid 2px blue;
+        }
+    </style>
+</head>
+<body ng-app="app">
+     <div class="spicy">
+        <div ng-controller="MainController">
+            <p>$scope: {{ timeOfDay}}, {{ name }}!</p>
+            <div ng-controller="ChildController">
+                <p>$scope: {{ timeOfDay}}, {{ name }}!</p>
+                <p>$parent: {{ $parent.timeOfDay}}, {{ $parent.name }}!</p>
+                <div ng-controller="GrandChildController">
+                    <p>$scope: {{ timeOfDay}}, {{ name }}!</p>
+                    <p>$parent: {{ $parent.timeOfDay}}, {{ $parent.name }}!</p>
+                    <p>$parent.$parent: {{ $parent.$parent.timeOfDay}}, {{ $parent.$parent.name }}!</p>
+                </div>
+            </div>
+        </div>
+     </div><br />
+    <div class="spicy">
+        <div ng-controller="MainController">
+            <p>Good {{ timeOfDay}}, {{ name }}!</p>
+            <div ng-controller="ChildController">
+                <p>Good {{ timeOfDay}}, {{ name }}!</p>
+                <div ng-controller="GrandChildController">
+                    <p>Good {{ timeOfDay}}, {{ name }}!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
