@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS - Controller As (Inheritance)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="inheritance.module.js"></script>
+    <style>
+        div.spicy div {
+            padding: 10px;
+            border: solid 2px blue;
+        }
+    </style>
+</head>
+<body ng-app="app">
+    <div class="spicy">
+       <div ng-controller="MainController as main">
+            <p>main: {{ main.timeOfDay}}, {{ main.name }}!</p>
+            <div ng-controller="ChildController as child">
+                <p>main: {{ main.timeOfDay}}, {{ main.name }}!</p>
+                <p>child: {{ child.timeOfDay}}, {{ child.name }}!</p>
+                <div ng-controller="GrandChildController as grand_child">
+                    <p>main: {{ main.timeOfDay}}, {{ main.name }}!</p>
+                    <p>child: {{ child.timeOfDay}}, {{ child.name }}!</p>
+                    <p>grand_child: {{ grand_child.timeOfDay}}, {{ grand_child.name }}!</p>
+                </div>
+            </div>
+        </div>
+    </div><br />
+    <div class="spicy">
+        <div ng-controller="MainController as main">
+            <p>Good {{ main.timeOfDay}}, {{ main.name }}!</p>
+            <div ng-controller="ChildController as child">
+                <p>Good {{ child.timeOfDay}}, {{ child.name }}!</p>
+                <div ng-controller="GrandChildController as grand_child">
+                    <p>Good {{ grand_child.timeOfDay}}, {{ grand_child.name }}!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
