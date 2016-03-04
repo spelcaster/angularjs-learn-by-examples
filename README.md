@@ -6,3 +6,5 @@ Learning AngularJS by examples
 [Todd Motto - Digging into Angular's "Controller as" syntax](https://toddmotto.com/digging-into-angulars-controller-as-syntax/)
 
 [Mark Meyer - The top 10 mistakes AngularJS developers make](https://www.airpair.com/angularjs/posts/top-10-mistakes-angularjs-developers-make)
+
+[Q promise library repository](https://github.com/kriskowal/q)
