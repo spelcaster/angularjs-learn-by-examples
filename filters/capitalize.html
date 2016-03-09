@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS - Filter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="capitalize.module.js"></script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="CapitalizeController as main">
+    <input type="text" ng-model="main.greetings">
+    <h2>{{ main.greetings | capitalize }}</h2>
+</div>
+</body>
+</html>
