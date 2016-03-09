@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS - Filter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="people.module.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="PeopleController as ctrl1">
+        <p ng-repeat="person in ctrl1.people | orderBy: 'name'">
+        {{ person.name }} / {{ person.born }}
+        </p>
+    </div><br><hr><br>
+    <div ng-controller="PeopleController as ctrl2">
+        <p ng-repeat="person in ctrl2.people | limitTo: 2">
+        {{ person.name }} / {{ person.born }}
+        </p>
+    </div><br><hr><br>
+    <div ng-controller="PeopleController as ctrl3">
+        <p ng-repeat="person in ctrl3.people | limitTo: -2">
+        {{ person.name }} / {{ person.born }}
+        </p>
+    </div><br><hr><br>
+    <div ng-controller="PeopleController as ctrl4">
+        <p ng-repeat="person in ctrl4.people | orderBy: 'name' | limitTo: 2">
+        {{ person.name }} / {{ person.born }}
+        </p>
+    </div><br><hr><br>
+</body>
+</html>

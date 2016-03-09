@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS - ngFilter Search</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="people.module.js"></script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="PeopleController as test1">
+    Search by all attributes: <input type="text" ng-model="search"><br>
+    <p ng-repeat="person in test1.people | filter: search">
+    {{ person.name }} / {{ person.born }}
+    </p>
+</div>
+<br>
+<hr>
+<br>
+<div ng-controller="PeopleController as test2">
+    Search by all attributes: <input type="text" ng-model="search.$"><br>
+    <p ng-repeat="person in test2.people | filter: search">
+    {{ person.name }} / {{ person.born }}
+    </p>
+</div>
+<br>
+<hr>
+<br>
+<div ng-controller="PeopleController as test3">
+    Search by all attributes: <input type="text" ng-model="search.$"><br>
+    Search by person name: <input type="text" ng-model="search.name"><br>
+    Search by person born city: <input type="text" ng-model="search.born"><br>
+    <p ng-repeat="person in test3.people | filter: search">
+    {{ person.name }} / {{ person.born }}
+    </p>
+</div>
+<br>
+<hr>
+<br>
+<div ng-controller="PeopleController as test4">
+    Search by all attributes (will not work): <input type="text" ng-model="search.$"><br>
+    Search by person name: <input type="text" ng-model="search.name"><br>
+    Search by person born city: <input type="text" ng-model="search.born"><br>
+    <p ng-repeat="person in test4.people | filter: {search: $, name: search.name, born: search.born}">
+    {{ person.name }} / {{ person.born }}
+    </p>
+</div>
+</body>
+</html>
